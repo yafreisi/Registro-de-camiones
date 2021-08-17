@@ -1,0 +1,43 @@
+.circulo {
+    width: 175px;
+    height: 160px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+   
+}
+
+.kev{
+
+     margin-top: 240px;
+
+
+}
+
+.tarje{
+
+
+    background-color: rgb(11, 10, 12);
+}
+
+
+.tarje2{
+
+
+    background-color: rgb(147, 156, 161);
+}
+
+.baso
+{   
+    margin-left: 126px;
+    width: 600px;
+    color: white;
+    height: 50px;
+    font-size: x-large;
+    padding: 15px 40px 10px;
+}
+.tasa{
+
+    margin-left: 247px;
+
+}
