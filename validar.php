@@ -20,7 +20,7 @@ if($rows['id_cargo']==1)//administrador
 }
 else if($rows['id_cargo']==2)//usuario
 {
-    header("location: Usuario.php");
+    header("location: verUsuario.php");
 }
 else{
     ?>

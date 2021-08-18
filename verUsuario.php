@@ -1,44 +1,27 @@
+<?php
+include("BD.php");
+$sql = "SELECT * FROM registro";//Seleccionar la tabla regirstro
+
+?>
 
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.87.0">
-    <title>Signin Template · Bootstrap v5.1</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 
-    <!-- Bootstrap core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-
-    
-    <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
-  </head>
-  <body class="text-center Sing">
-          
+    <script src="asset/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="asset/dist/sweetalert2.css">
+</head>
+<body>
+       
 <svg  style="display: none; ">
   <symbol id="bootstrap" viewBox="0 0 118 94">
     <title>Bootstrap</title>
@@ -62,83 +45,111 @@
   <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
   </symbol>
 </svg>
-<main class="form-signin">
-  <form action="validar.php" method="POST">
-   <a class="tama"> <i class="fas fa-truck-moving" ></i></a>
-    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-
-    <div class="form-floating">
-      <input type="text" name="Usuario" class="form-control" id="Usuario" placeholder="Usuario">
-      <label for="Usuario">Usuario</label>
-    </div>
-    <div class="form-floating">
-      <input type="password" name="Password" class="form-control" id="floatingPassword" placeholder="Password">
-      <label for="floatingPassword">Password</label>
-    </div>
-
-    <div class="checkbox mb-3">
-      <label>
-     <a href=""  data-bs-toggle="modal" data-bs-target="#exampleModal">Crear Cuenta</a>
-      </label>
-    </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-    <p class="mt-5 mb-3 text-muted">&copy; Derechos Reservados</p>
-  </form>
-</main>
-
-<div class="modal fade tema" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        
-      <a href="#" class="">
-      <svg class="bi d-block mx-auto mb-1 colo" width="40" height="40"><use xlink:href="#grid"/></svg>
-               
-        </a>
-        <h5 class="modal-title" id="exampleModalLabel">&nbsp Crear Usuario</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-      <form class="row g-3  ">
-   
-   <div class="col-md-6">
-     <label for="inputEmail4" class="form-label">Nombre</label>
-     <input type="text" name="" class="form-control" id="inputEmail4">
-   </div>
-   <div class="col-md-6">
-     <label for="inputPassword4" class="form-label">Usuario</label>
-     <input type="text" class="form-control" id="inputPassword4">
-   </div>
-   <div class="col-md-6">
-     <label for="inputPassword4" class="form-label">Password</label>
-     <input type="password" class="form-control" id="inputPassword4">
-   </div>
-   <div class="col-md-6 mt-5">
-   <select class="form-select" aria-label="Default select example">
-  <option selected>Open this select menu</option>
-  <option value="1">Administrador</option>
-  <option value="2">Usuario</option>
  
-</select>
-   </div>
-   
-   
-  
-  
-   <div class="col-12">
-     <button type="submit" class="btn btn-dark">Sign in</button>
-   </div>
-   
- </form>
+<header>
+    <div class="px-3 py-2 bg-dark text-white">
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+          <a href="index.php" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+         
+           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-reply-all-fill" viewBox="0 0 16 16">
+            <path d="M8.021 11.9 3.453 8.62a.719.719 0 0 1 0-1.238L8.021 4.1a.716.716 0 0 1 1.079.619V6c1.5 0 6 0 7 8-2.5-4.5-7-4-7-4v1.281c0 .56-.606.898-1.079.62z"/>
+            <path d="M5.232 4.293a.5.5 0 0 1-.106.7L1.114 7.945a.5.5 0 0 1-.042.028.147.147 0 0 0 0 .252.503.503 0 0 1 .042.028l4.012 2.954a.5.5 0 1 1-.593.805L.539 9.073a1.147 1.147 0 0 1 0-1.946l3.994-2.94a.5.5 0 0 1 .699.106z"/>
+            </svg>
+            &nbsp Cerrar Sesion
+          </a>
+          
+
+         <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+           <!--   <li>
+              <a href="#" class="nav-link text-secondary">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"/></svg>
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link text-white">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#speedometer2"/></svg>
+                Dashboard
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link text-white">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
+                Orders
+              </a>
+            </li>-->
+            <li>
+              <a href="CrearLavador.php" class="nav-link text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
+                Crear Lavador
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link text-white" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
+                Crear Camion
+              </a>
+            </li>
+          </ul> 
+        </div>
       </div>
-     
     </div>
-  </div>
-</div>
+   
+</header>
     
 
+<div class="container mt-5 " >
+
+     
+      <div class="bg-light border rounded-3">
+        <br><table class="table">
+  <thead>
+    <tr>
+    <th scope="col">id</th>
+      <th scope="col">Placa Camion</th>
+      <th scope="col">Codigo Camion</th>
+      <th scope="col">Cantidad Camion</th>
+      <th scope="col">Peso LB</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+   
+    
+  <?php $result=mysqli_query($conexion,$sql);
+                    
+                    while($row  = mysqli_fetch_assoc($result)){?>
   
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <tr>  
+                    <td ><?php echo $row['id'];?></td>
+                    <td ><?php echo $row["placa"];?></td>
+                    <td><?php echo $row["codigoLavadora"];?></td>
+                    <td><?php echo $row["Cantidad"];?></td>
+                    <td><?php echo $row["pesoLB"];?></td>
+                    
+                    
+                  
+                   
+ 
+<?php }?>
+
+    </tr>
+  
+  
+  
+   
+  
+  
+  
+  
+    
+    
+  </tbody>
+</table>
+      </div>
+    </div>
+  </div>
+  </div>
   </body>
 </html>

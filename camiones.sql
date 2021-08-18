@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-08-2021 a las 17:14:11
--- Versión del servidor: 10.4.17-MariaDB
--- Versión de PHP: 7.3.27
+-- Tiempo de generación: 18-08-2021 a las 02:27:18
+-- Versión del servidor: 10.4.18-MariaDB
+-- Versión de PHP: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -44,7 +44,15 @@ CREATE TABLE `camiones` (
 --
 
 INSERT INTO `camiones` (`id`, `marca`, `modelo`, `color`, `comentario`, `cantLavadora`, `valorCarga`, `PesoTi`, `placa`) VALUES
-(11, 'honda', 'civic', 'negro', 'ssdfsdfdfs', 52, 22, '10300', 'L32344');
+(11, 'honda', 'civic', 'negro', 'ssdfsdfdfs', 52, 22, '10300', 'L32344'),
+(12, 'mercedes', 'actros', 'azul', 'que sea bien amplio', 3, 20000, '2000libra', 'l35897'),
+(13, 'lop', 'libr', 'azul', 'que sea espacioso', 5, 700, '2000', 'l5252'),
+(14, '', '', '', '', 0, 0, '', ''),
+(15, '', '', '', '', 0, 0, '', ''),
+(16, '', '', '', '', 0, 0, '', ''),
+(17, '', '', '', '', 0, 0, '', ''),
+(18, '', '', '', '', 0, 0, '', ''),
+(19, '', '', '', '', 0, 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -85,7 +93,42 @@ CREATE TABLE `lavador` (
 --
 
 INSERT INTO `lavador` (`id`, `codigo`, `marca`, `modelo`, `valor`, `pesoLB`) VALUES
-(0, 1520, 'universal', 'asdsd', 22, 42);
+(0, 1520, 'universal', 'asdsd', 22, 42),
+(0, 123, 'continental', 'actros', 5000, 500),
+(0, 123, 'continental', 'actros', 5000, 500),
+(0, 11, 'lupe', 'vente', 500, 200),
+(0, 0, '', '', 0, 0),
+(0, 0, '', '', 0, 0),
+(0, 0, '', '', 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `registro`
+--
+
+CREATE TABLE `registro` (
+  `id` int(11) NOT NULL,
+  `placa` varchar(250) NOT NULL,
+  `codigoLavadora` varchar(250) NOT NULL,
+  `Cantidad` int(11) NOT NULL,
+  `pesoLB` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `registro`
+--
+
+INSERT INTO `registro` (`id`, `placa`, `codigoLavadora`, `Cantidad`, `pesoLB`) VALUES
+(1, '45345', '545', 45, 45),
+(2, 'l5252', '11', 5, 500),
+(3, 'L32344', '1520', 0, 0),
+(4, '', '', 0, 0),
+(5, 'L32344', '1520', 54, 10100),
+(6, 'Placa Camion', 'Codigo Lavador', 0, 0),
+(7, 'Placa Camion', 'Codigo Lavador', 0, 0),
+(8, 'Placa Camion', 'Codigo Lavador', 0, 0),
+(9, 'Placa Camion', 'Codigo Lavador', 10, 10100);
 
 -- --------------------------------------------------------
 
@@ -107,7 +150,11 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `contra`, `id_cargo`) VALUES
 (1, 'Kevin', 'Kevin01', '12345', 1),
-(2, 'josue', 'josue01', '1234', 2);
+(2, 'josue', 'josue01', '1234', 2),
+(3, 'yafreisi', 'yafre', '1234', 1),
+(4, 'yafre', 'yafre', 'yafre', 1),
+(5, 'yafreisi', 'yafre', 'yolainys', 1),
+(6, 'pepito', 'pepi', '123456', 1);
 
 --
 -- Índices para tablas volcadas
@@ -126,6 +173,12 @@ ALTER TABLE `cargo`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `registro`
+--
+ALTER TABLE `registro`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
@@ -140,7 +193,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `camiones`
 --
 ALTER TABLE `camiones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de la tabla `cargo`
@@ -149,10 +202,16 @@ ALTER TABLE `cargo`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT de la tabla `registro`
+--
+ALTER TABLE `registro`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Restricciones para tablas volcadas
